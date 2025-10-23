@@ -1,0 +1,91 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    background: #fafafa;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header"
+        "sidebar main ads"
+        "footer footer footer";
+        gap: 20px;
+        padding: 20px;
+        max-width:1200px;
+        margin:0 auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow:0 4px 8px rgb (0 0 0 /0.1);
+}
+/*Alan adları*/
+.header{
+    grid-area: header;
+    background:#4a90e2;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding:20px;
+    border-radius:8px;
+}
+.sidebar{
+    grid-area:sidebar;
+    background:#50e3c2;
+    padding:15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.main{
+    grid-area: main;
+    background:#9013fe;
+    color: white;
+    padding:20px;
+    border-radius: 8px;
+}
+.ads{
+    grid-area: ads;
+    background:#f5a623;
+    padding:20px;
+    border-radius:8px;
+    color: white;
+}
+.footer{
+    grid-area:footer;
+    background:#7b8d93;
+    color:white;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+}
+/*Hücre içi hizalama örnekleri*/
+.sidebar div{
+    background: white;
+    color:#333;
+    padding:10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight:600;
+}
+/*Responsive ayarlar*/
+@media (max-width:900px){
+    .container{
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "ads"
+            "footer";
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+    }
+} 
